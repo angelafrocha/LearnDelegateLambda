@@ -44,7 +44,7 @@
                             Console.WriteLine("Digite o preço:");
                             if (decimal.TryParse(Console.ReadLine(), out decimal preco) && preco > 0)
                             {
-                                VerListaDeLivros(livroRepository.Filtrar(LivroFilter.filtrarPorPreco(preco)));
+                                VerListaDeLivros(livroRepository.Filtrar(LivroFilter.FiltrarPrecoMax(preco)));
                             }
                             else
                                 Console.WriteLine("Preço inválido :/");
