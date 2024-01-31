@@ -21,17 +21,17 @@
                         break;
                     case 2:
                         var titulo = Utilities.LerString("Digite o título");
-                        var livrosPorTitulo = livroRepository.Filtrar(LivroFilter.FiltrarPorTitulo(titulo));
+                        var livrosPorTitulo = livroRepository.Filtrar(livro => livro.Titulo.Contains(titulo, StringComparison.CurrentCultureIgnoreCase));
                         ImprimirLivros(livrosPorTitulo);
                         break;
                     case 3:
                         var anoPublicacao = Utilities.LerNumeroInteiro($"Digite o ano de publicação (1500 - {DateTime.Now.Year})", 1500, DateTime.Now.Year);
-                        var livrosPorAno = livroRepository.Filtrar(LivroFilter.FiltrarAnoPublicacao(anoPublicacao));
+                        var livrosPorAno = livroRepository.Filtrar(livro => livro.AnoPublicacao == anoPublicacao);
                         ImprimirLivros(livrosPorAno);
                         break;
                     case 4:
                         var precoMax = Utilities.LerPreco("Digite o preço máximo", 1);
-                        var livrosPorPreco = livroRepository.Filtrar(LivroFilter.FiltrarPrecoMax(precoMax));
+                        var livrosPorPreco = livroRepository.Filtrar(livro => livro.Preco <= precoMax);
                         ImprimirLivros(livrosPorPreco);
                         break;
                     case 5:

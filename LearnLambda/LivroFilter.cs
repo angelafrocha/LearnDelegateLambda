@@ -12,7 +12,7 @@ namespace LearnLambda
 
         public static Filter<Livro> FiltrarPorTitulo(string titulo)
         {
-            return (livro) => livro.Titulo.Contains(titulo);
+            return (livro) => livro.Titulo.Contains(titulo, StringComparison.CurrentCultureIgnoreCase);
         }
 
         public static  Filter<Livro> FiltrarPrecoMax(decimal preco)

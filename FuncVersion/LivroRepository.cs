@@ -13,9 +13,9 @@ namespace LearnLambda
 
         public LivroRepository(List<Livro> livros) => this.Livros = livros;
 
-        public List<Livro> Filtrar(Filter<Livro> filtro)
+        public List<Livro> Filtrar(Func<Livro, bool> filtro)
         {
-            return Livros.Where(x => filtro(x)).ToList();
+            return Livros.Where(filtro).ToList();
         }
     }
 

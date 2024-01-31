@@ -7,8 +7,4 @@ using System.Threading.Tasks;
 namespace LearnLambda
 {
     public delegate bool Filter<T>(T elemente);
-    internal interface AbrigaDelegate
-    {
-        
-    }
 }
